@@ -1,0 +1,171 @@
+/*==============================================
+  Base Styles
+==============================================*/
+@import './helper.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #FFFFFF;
+
+	margin: 0;
+	width: 100vw;
+	overflow-x: hidden;
+	background-color: #1d1d1d;
+
+	@include verticalScroll();
+
+	&.keyboard {
+		max-height: calc(100vh - 270px);
+	}
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+
+	&:active,
+	&:focus,
+	&:hover,
+	&:visited {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	background: initial;
+
+	&:focus,
+	&:hover {
+		outline: none;
+	}
+}
+
+img {}
+
+#root {
+	position: relative;
+}
+
+*:focus {
+	outline: none;
+}
+
+*::selection {
+	color: white;
+	background-color: #0561d1;
+}
+
+*::-moz-selection {
+	color: white;
+	background-color: #0561d1;
+}
+
+
+.d-none {
+	display: none !important;
+}
+
+.d-hidden {
+	opacity: 0;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.pr-24 {
+	padding-right: 24px;
+}
+
+.ml-16 {
+	margin-left: 16px;
+}
+
+.mr-16 {
+	margin-right: 16px;
+}
+
+.mt-16 {
+	margin-top: 16px;
+}
+
+.mt-24 {
+	margin-top: 24px;
+}
+
+.mt-37 {
+	margin-top: 37px;
+}
+
+.mt-48 {
+	margin-top: 48px;
+}
+
+.b-44 {
+	bottom: 44px;
+}
+
+.w-445 {
+	@media screen and (min-width: 768px) {
+		width: 445px;
+	}
+
+	@media screen and (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.no-scroll {
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.transparent {
+	opacity: 0 !important;
+	pointer-events: none;
+
+	* {
+		opacity: 0 !important;
+		cursor: default !important;
+	}
+}
+
+.page-container {
+	position: relative;
+	background: #1d1d1d no-repeat fixed;
+	max-width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+
+	@media screen and (min-width: 768px) {}
+
+	@media screen and (max-width: 767px) {}
+}
+
+.mask-parent {
+	position: relative !important;
+}
+
+.gray-color {
+	color: #8B8B8B !important;
+}
+
+.top-bar {
+	position: relative;
+	height: 8px;
+	background: #61CEF7;
+	transition: width 0.5s;
+}

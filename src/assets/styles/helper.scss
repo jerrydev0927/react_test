@@ -1,0 +1,79 @@
+// Small devices(landscape phones, 576px and up)
+@media screen and (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {}
+
+/// Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) {}
+
+/// Extra large devices (large desktops, 1200px and up)
+@media screen and (min-width: 1200px) {}
+
+@mixin defaultFont($style, $weight, $size, $lineHeight:normal) {
+	font-family: 'Montserrat', sans-serif !important;
+	font-style: $style !important;
+	font-weight: $weight !important;
+	font-size: $size !important;
+	line-height: $lineHeight !important;
+}
+
+@mixin color($color, $opacity:1) {
+	-webkit-text-fill-color: $color;
+	-webkit-opacity: $opacity;
+	color: $color;
+}
+
+@mixin textShrink($maxLine:1) {
+	text-overflow: ellipsis;
+	// white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+
+	display: -webkit-box;
+	-webkit-line-clamp: $maxLine;
+	-webkit-box-orient: vertical;
+}
+
+@mixin verticalScroll($color:#26282A) {
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: $color;
+	}
+}
+
+@mixin horizontalScroll($color:#26282A) {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	&::-webkit-scrollbar {
+		height: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: $color;
+	}
+}
+
+@mixin selectionColor($fgColor: white, $bgColor: #0561d1) {
+	&::selection {
+		color: $fgColor !important;
+		background-color: $bgColor !important;
+	}
+
+	&::-moz-selection {
+		color: $fgColor !important;
+		background-color: $bgColor !important;
+	}
+}
+
+$appGreenColor: #61CEF7;
+$errorColor: #F46666;
